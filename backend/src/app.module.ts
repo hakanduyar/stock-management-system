@@ -7,6 +7,7 @@ import { ProductsModule } from './products/products.module';
 import { StockModule } from './stock/stock.module';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { AllExceptionsFilter } from './common/filters/http-exception.filter';
+import { HealthController } from './health.controller'; // Yeni eklenen health endpoint'i
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AllExceptionsFilter } from './common/filters/http-exception.filter';
     ProductsModule,
     StockModule,
   ],
+  controllers: [HealthController], 
   providers: [
     {
       provide: APP_GUARD,
