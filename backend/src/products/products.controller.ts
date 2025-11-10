@@ -16,7 +16,7 @@ import { Role } from '@prisma/client';
 import { RolesGuard } from '../common/guards/roles.guard';
 
 @Controller('products')
-@UseGuards(RolesGuard)
+// @UseGuards(RolesGuard)
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
@@ -27,7 +27,7 @@ export class ProductsController {
   }
 
   @Get()
-  @Roles(Role.ADMIN, Role.STOREKEEPER, Role.EMPLOYEE)
+  // @Roles(Role.ADMIN, Role.STOREKEEPER, Role.EMPLOYEE)
   findAll(@Query() query: ProductQueryDto) {
     return this.productsService.findAll(query);
   }
