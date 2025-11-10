@@ -22,7 +22,16 @@ async function bootstrap() {
     }),
   );
 
-
+// HEALTH CHECK - ROOT İÇİN (prefix'ten önce!)
+  app.getHttpAdapter().get('/', (req, res) => {
+    res.json({
+      status: 'ok',
+      message: 'Stock Management API is running!',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development',
+      api: '/api',
+    });
+  });
 
   // Global prefix
   app.setGlobalPrefix('api');
