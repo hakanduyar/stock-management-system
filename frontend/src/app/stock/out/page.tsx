@@ -56,7 +56,7 @@ export default function StockOutPage() {
       const result = await stockService.stockOut(formData);
       
       if (result.warning) {
-        toast.warning(result.warning);
+        toast.error(result.warning);
       } else {
         toast.success(`Stock removed successfully! New stock: ${result.product.currentStock}`);
       }
