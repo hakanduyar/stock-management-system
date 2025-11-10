@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "nixpacks"
+  },
+  "deploy": {
+    "startCommand": "cd frontend && npm start",
+    "restartPolicyType": "on_failure"
+  }
+}
